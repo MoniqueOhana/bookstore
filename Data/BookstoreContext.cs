@@ -5,7 +5,7 @@ namespace Bookstore.Data
 {
     public class BookstoreContext : DbContext
     {
-        protected BookstoreContext(DbContextOptions<BookstoreContext> options) : base(options) 
+        public BookstoreContext(DbContextOptions<BookstoreContext> options) : base(options) 
         {
         }
 
