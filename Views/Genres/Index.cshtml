@@ -9,7 +9,7 @@
 
 <p>
     <a asp-action="Create">Adicionar novo Gênero Literário</a>
-</p
+</p>
 
 <table class="table table-hover">
     <thead>
@@ -26,7 +26,7 @@
                     @Html.DisplayFor(modelItem => genre.Name)
                 </td>
                 <td>
-                    <a asp-action="Details" asp-route-id="@genre.Id">Detalhes</a>
+                 
                     <a
                         type="button"
                         title="Detalhes"
@@ -52,8 +52,7 @@
                 </a>
 
 
-                    <a asp-action="Edit" asp-route-id="@genre.Id">Editar</a>
-                    <a asp-action="Delete" asp-route-id="@genre.Id"> Deletar</a>
+                 
                 </td>
             </tr>
         }
