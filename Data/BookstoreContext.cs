@@ -5,6 +5,8 @@ namespace Bookstore.Data
 {
     public class BookstoreContext : DbContext
     {
+        internal readonly object Books;
+
         public BookstoreContext(DbContextOptions<BookstoreContext> options) : base(options) 
         {
         }

@@ -21,6 +21,11 @@ namespace Bookstore.Services
 
         }
 
+        public async Task<Book> FindByUdAsync(int id)
+        {
+            return await _context.Books.Include(x => x.Genres).FirstOrDefaultAsync();
+        }
+
         public async Task InsertAsync (Genre genre)
         {
             _context.Add(genre);

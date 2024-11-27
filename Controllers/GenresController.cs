@@ -41,11 +41,13 @@ namespace Bookstore.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete(int? id) //Ponto de interrogação deixará a possibilidade do id ser nulo.
         {
             if (id is null)
             {
-                return RedirectToAction(nameof(Error), new { message = "O ID não foi fornecido."}); //'nameof' faz o vínculo com a action, sendo alterada junto em caso de alteração no nome.
+                return RedirectToAction(nameof(Error), new { message = "O ID não foi fornecido." }); //'nameof' faz o vínculo com a action, sendo alterada junto em caso de alteração no nome.
             }
 
             Genre genre = await _service.FindByIdAsync(id.Value);
@@ -56,6 +58,21 @@ namespace Bookstore.Controllers
 
             return View(genre);
         }
+
+        //DELETE DO BOOKSCONTROLLER
+        // public async Task<IActionResult> Delete(int id)
+        //{
+        //  try {
+        //      await _service.RemoveAsync(id);
+        //      return RedirectToAction(nameof(Index));
+        // }
+        //  catch (IntegrityException ex)
+        // {
+        //      return RedirectToAction(nameof(Error), new { message = ex.Message };
+        // }
+        // }
+
+
 
         [HttpPost]
         [ValidateAntiForgeryToken]

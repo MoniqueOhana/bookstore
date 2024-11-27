@@ -11,7 +11,7 @@ namespace Bookstore.Models
 			[Display(Name = "Nome")]
 			public string Name { get; set; }
 
-			//public ICollection<Book> Books { get; set; } = new List<Book>();
+			public ICollection<Book> Books { get; set; } = new List<Book>();
 
 			public Genre()
 			{
